@@ -1,9 +1,18 @@
 import "./App.scss";
+import LinkButton from "./components/Common/LinkButton/LinkButton";
 
 function App() {
 	return (
 		<>
-			<h1>Expansion</h1>
+			<section className="section">
+				<h1 className="title">Expansion</h1>
+				<LinkButton text="Prendre un rendez-vous" href="#" />
+				<LinkButton
+					text="Faites le test sans plus tarder"
+					iconUrl="../src/assets/rocket-icon.svg"
+					href="#"
+				/>
+			</section>
 		</>
 	);
 }
