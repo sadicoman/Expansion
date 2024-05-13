@@ -1,0 +1,31 @@
+/** ===============================================================
+ * VARIABLES
+** =============================================================== */
+:root {
+	--color-primary: #e75336;
+	--color-background: ##ffffff;
+	--color-success: #2ecc71;
+	--color-error: hsl(0, 100%, 75%);
+	--color-on-primary: #ffffff;
+	--color-on-title: #272727;
+	--color-background: #5d5c5c;
+	--color-on-text: #5d5c5c;
+	--color-on-text-contact: #162049;
+	--color-on-menu-text: #333333;
+	--color-on-error: #ffffff;
+
+	// --margin-bas: 3.5rem; /* 24px */
+	// --margin-mb: 1.5rem; /* 24px */
+	// --margin-x-mb: 0.875rem; /* 14px */
+	// --padding-mb: 0.75rem; /* 12px */
+	// --padding-x-mb: 0.5rem; /* 8px */
+
+	/* Type */
+	@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+	@import url("https://use.typekit.net/cqn7gkh.css");
+
+	$font-text: "azo-sans-web", sans-serif;
+	$font-title: "Montserrat", sans-serif;
+
+	--font-size-h1: 2.222rem;
+}
