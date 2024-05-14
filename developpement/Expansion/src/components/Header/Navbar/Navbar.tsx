@@ -3,6 +3,7 @@ import "./Navbar.scss";
 import { useMenu } from "../MenuContext";
 
 import gsap from "gsap";
+import LinkButton from "../../Common/LinkButton/LinkButton";
 
 type NavItem = {
 	name: string;
@@ -50,6 +51,14 @@ const Navbar: React.FC = () => {
 						</a>
 					</li>
 				))}
+			</ul>
+			<ul>
+				<li>
+					<a href="">Contact</a>
+				</li>
+				<li>
+					<LinkButton text="Prendre un rendez-vous" href="#" />
+				</li>
 			</ul>
 		</nav>
 	);
