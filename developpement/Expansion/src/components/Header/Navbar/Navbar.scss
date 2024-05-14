@@ -1,0 +1,45 @@
+.menu {
+	display: none;
+}
+
+body[data-menu] .menu {
+	display: flex;
+	height: 100%;
+	overflow-y: scroll;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+	background-color: var(--color-primary);
+}
+
+.menu__liste {
+	list-style: none;
+	margin: auto;
+	padding: 0;
+	text-align: center;
+}
+
+.menu__el {
+	text-align: center;
+
+	&--actif {
+		background-color: var(--color-background);
+		.menu__lien {
+			color: var(--color-primary);
+		}
+	}
+}
+
+.menu__lien {
+	color: var(--color-on-primary);
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 3px;
+	display: inline-block;
+	padding: 1em;
+	margin: 0.5em;
+	font-size: 18px;
+	transition: all 400ms cubic-bezier(0, 0.995, 0.99, 1);
+}
