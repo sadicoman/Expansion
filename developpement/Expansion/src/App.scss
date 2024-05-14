@@ -27,3 +27,8 @@
 		max-width: 100%;
 	}
 }
+
+.lien,
+.lien > * {
+	cursor: pointer;
+}

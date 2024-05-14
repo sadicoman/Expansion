@@ -10,7 +10,7 @@ interface LinkButtonProps {
 const LinkButton: React.FC<LinkButtonProps> = ({ text, iconUrl, href }) => {
 	return (
 		// Utilisez `onClick` pour la gestion des événements, et `href` pour la navigation
-		<a className="btn" href={href}>
+		<a className="btn lien" href={href}>
 			{iconUrl && (
 				<img src={iconUrl} alt="Icon" style={{ width: "18px", paddingRight: "8px" }} />
 			)}{" "}
