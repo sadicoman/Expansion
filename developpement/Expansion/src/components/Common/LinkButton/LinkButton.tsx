@@ -9,13 +9,31 @@ interface LinkButtonProps {
 
 const LinkButton: React.FC<LinkButtonProps> = ({ text, iconUrl, href }) => {
 	return (
-		// Utilisez `onClick` pour la gestion des événements, et `href` pour la navigation
-		<a className="btn lien" href={href}>
-			{iconUrl && (
-				<img src={iconUrl} alt="Icon" style={{ width: "18px", paddingRight: "8px" }} />
-			)}{" "}
-			<span>{text}</span>
-		</a>
+		<div className="box">
+			<a className="btn lien" href={href}>
+				{iconUrl && (
+					<div className="container__img">
+						<img
+							src={iconUrl}
+							alt="Icon"
+							style={{ width: "18px", paddingRight: "8px" }}
+						/>
+					</div>
+				)}
+				<span className={iconUrl ? "text-with-icon" : ""}>{text}</span>
+				{iconUrl && (
+					<div className="space">
+						<span style={{ "--i": "31" }} className="star"></span>
+						<span style={{ "--i": "12" }} className="star"></span>
+						<span style={{ "--i": "57" }} className="star"></span>
+						<span style={{ "--i": "93" }} className="star"></span>
+						<span style={{ "--i": "23" }} className="star"></span>
+						<span style={{ "--i": "70" }} className="star"></span>
+						<span style={{ "--i": "6" }} className="star"></span>
+					</div>
+				)}
+			</a>
+		</div>
 	);
 };
 
