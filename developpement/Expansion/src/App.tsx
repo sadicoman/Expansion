@@ -1,3 +1,4 @@
+import "./_normalize.scss";
 import "./App.scss";
 import LinkButton from "./components/Common/LinkButton/LinkButton";
 import Header from "./components/Header/Header";

@@ -14,3 +14,9 @@
 body[data-menu] .navBtn__svg {
 	fill: #fff;
 }
+
+@media screen and (min-width: 1400px) {
+	.navBtn {
+		display: none;
+	}
+}

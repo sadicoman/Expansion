@@ -5,11 +5,13 @@ import Navbar from "./Navbar/Navbar";
 const Header = () => {
 	return (
 		<>
-			<header className="header">
-				<img className="logo" src="assets/images/logo-l.svg" alt="Logo" />
-				<BurgerMenu />
-				<Navbar />
-			</header>
+			<div className="container__header">
+				<header className="header">
+					<img className="logo" src="assets/images/logo-l.svg" alt="Logo" />
+					<BurgerMenu />
+					<Navbar />
+				</header>
+			</div>
 		</>
 	);
 };
