@@ -1,0 +1,17 @@
+.color {
+	&--primary {
+		color: var(--color-primary);
+	}
+}
+
+.text {
+	font-family: var(--font-secondary);
+
+	&--color {
+		color: var(--color-on-text);
+	}
+}
+
+.highlight {
+	font-weight: 600;
+}
