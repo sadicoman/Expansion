@@ -12,13 +12,27 @@ body[data-menu] .menu {
 	width: 100%;
 	z-index: 2;
 	background-color: var(--color-primary);
+	flex-direction: column;
 }
 
 .menu__liste {
 	list-style: none;
-	margin: auto;
-	padding: 0;
+	margin-top: 5rem;
+	padding: 1.5rem;
 	text-align: center;
+	height: 100%;
+
+	&--contact {
+		margin-top: 0;
+		background-color: var(--color-background);
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		.menu__lien {
+			color: var(--color-on-text-contact);
+		}
+	}
 }
 
 .menu__el {

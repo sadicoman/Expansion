@@ -21,11 +21,11 @@ const Navbar: React.FC = () => {
 	];
 
 	const { isMenuVisible } = useMenu();
-	const menuRef = useRef<HTMLUListElement>(null);
+	const navRef = useRef<HTMLElement>(null);
 
 	useEffect(() => {
-		if (menuRef.current && isMenuVisible) {
-			const elems = menuRef.current.children;
+		if (navRef.current && isMenuVisible) {
+			const elems = navRef.current.querySelectorAll("li");
 			gsap.fromTo(
 				elems,
 				{ opacity: 0, x: 50 },
@@ -35,8 +35,8 @@ const Navbar: React.FC = () => {
 	}, [isMenuVisible]);
 
 	return (
-		<nav className="menu">
-			<ul className="menu__liste" ref={menuRef}>
+		<nav className="menu" ref={navRef}>
+			<ul className="menu__liste">
 				{menuItems.map(item => (
 					<li
 						key={item.name}
@@ -52,11 +52,13 @@ const Navbar: React.FC = () => {
 					</li>
 				))}
 			</ul>
-			<ul>
-				<li>
-					<a href="">Contact</a>
+			<ul className="menu__liste menu__liste--contact">
+				<li className="menu__el">
+					<a className="menu__lien" href="#Contact">
+						Contact
+					</a>
 				</li>
-				<li>
+				<li className="menu__el">
 					<LinkButton text="Prendre un rendez-vous" href="#" />
 				</li>
 			</ul>
