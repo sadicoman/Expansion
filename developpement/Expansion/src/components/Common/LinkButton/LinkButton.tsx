@@ -21,17 +21,16 @@ const LinkButton: React.FC<LinkButtonProps> = ({ text, iconUrl, href }) => {
 					</div>
 				)}
 				<span className={iconUrl ? "text-with-icon" : ""}>{text}</span>
-				{iconUrl && (
-					<div className="space">
-						<span style={{ "--i": "31" }} className="star"></span>
-						<span style={{ "--i": "12" }} className="star"></span>
-						<span style={{ "--i": "57" }} className="star"></span>
-						<span style={{ "--i": "93" }} className="star"></span>
-						<span style={{ "--i": "23" }} className="star"></span>
-						<span style={{ "--i": "70" }} className="star"></span>
-						<span style={{ "--i": "6" }} className="star"></span>
-					</div>
-				)}
+
+				<div className="space">
+					<span style={{ "--i": "31" }} className="star"></span>
+					<span style={{ "--i": "12" }} className="star"></span>
+					<span style={{ "--i": "57" }} className="star"></span>
+					<span style={{ "--i": "93" }} className="star"></span>
+					<span style={{ "--i": "23" }} className="star"></span>
+					<span style={{ "--i": "70" }} className="star"></span>
+					<span style={{ "--i": "6" }} className="star"></span>
+				</div>
 			</a>
 		</div>
 	);
