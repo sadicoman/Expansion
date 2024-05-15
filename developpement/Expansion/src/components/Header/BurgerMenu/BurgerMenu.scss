@@ -5,10 +5,15 @@
 	height: 60px;
 	padding: 0;
 	width: 60px;
-	z-index: 3;
+	z-index: 91;
+	position: relative;
 }
 .navBtn__svg {
 	fill: var(--color-primary);
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: opacity 0.3s;
 }
 
 body[data-menu] .navBtn__svg {

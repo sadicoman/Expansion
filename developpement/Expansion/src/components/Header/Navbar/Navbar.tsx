@@ -1,7 +1,6 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, forwardRef } from "react";
 import "./Navbar.scss";
 import { useMenu } from "../MenuContext";
-
 import gsap from "gsap";
 import LinkButton from "../../Common/LinkButton/LinkButton";
 
@@ -10,7 +9,8 @@ type NavItem = {
 	link: string;
 };
 
-const Navbar: React.FC = () => {
+// Notez que `props` a été retiré ici car il n'est pas utilisé.
+const Navbar = forwardRef<HTMLElement>((_, ref) => {
 	const [activeMenu, setActiveMenu] = useState("Bienvenue");
 	const menuItems: NavItem[] = [
 		{ name: "Bienvenue", link: "#bienvenue" },
@@ -21,21 +21,22 @@ const Navbar: React.FC = () => {
 	];
 
 	const { isMenuVisible } = useMenu();
-	const navRef = useRef<HTMLElement>(null);
+	const navInternalRef = useRef<HTMLElement>(null);
+	const combinedRef = (ref as React.RefObject<HTMLElement>) || navInternalRef;
 
 	useEffect(() => {
-		if (navRef.current && isMenuVisible) {
-			const elems = navRef.current.querySelectorAll("li");
+		if (combinedRef.current && isMenuVisible) {
+			const elems = combinedRef.current.querySelectorAll("li");
 			gsap.fromTo(
 				elems,
 				{ opacity: 0, x: 50 },
 				{ opacity: 1, x: 0, stagger: 0.1, duration: 0.5, ease: "power2.out" },
 			);
 		}
-	}, [isMenuVisible]);
+	}, [isMenuVisible, combinedRef]); // Inclusion de `combinedRef` dans les dépendances de `useEffect`
 
 	return (
-		<nav className="menu" ref={navRef}>
+		<nav className="menu" ref={combinedRef}>
 			<ul className="menu__liste">
 				{menuItems.map(item => (
 					<li
@@ -64,6 +65,6 @@ const Navbar: React.FC = () => {
 			</ul>
 		</nav>
 	);
-};
+});
 
 export default Navbar;

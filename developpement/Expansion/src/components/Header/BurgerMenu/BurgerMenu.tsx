@@ -1,48 +1,29 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, forwardRef } from "react";
+import gsap from "gsap";
 import { useMenu } from "../MenuContext";
 import "./BurgerMenu.scss";
 
-const BurgerMenu: React.FC = () => {
-	const bergurRef = useRef<HTMLDivElement>(null);
-	const croixRef = useRef<HTMLDivElement>(null);
+const BurgerMenu = forwardRef<HTMLElement>((props, ref) => {
+	const burgerRef = useRef<HTMLDivElement>(null);
+	const crossRef = useRef<HTMLDivElement>(null);
 	const { toggleMenuVisibility } = useMenu();
 
 	const toggleNavigation = () => {
 		toggleMenuVisibility(); // This will update the context state
 		if (document.body.hasAttribute("data-menu")) {
 			document.body.removeAttribute("data-menu");
-			if (bergurRef.current) bergurRef.current.style.display = "inherit";
-			if (croixRef.current) croixRef.current.style.display = "none";
+			gsap.to(crossRef.current, { autoAlpha: 0, duration: 0.3 });
+			gsap.to(burgerRef.current, { autoAlpha: 1, duration: 0.3 });
 		} else {
 			document.body.setAttribute("data-menu", "true");
-			if (bergurRef.current) bergurRef.current.style.display = "none";
-			if (croixRef.current) croixRef.current.style.display = "inherit";
+			gsap.to(burgerRef.current, { autoAlpha: 0, duration: 0.3 });
+			gsap.to(crossRef.current, { autoAlpha: 1, duration: 0.3 });
 		}
 	};
 
-	useEffect(() => {
-		const handleBodyClick = event => {
-			if ((event.target as Element).classList.contains("menu__liste")) {
-				if (document.body.hasAttribute("data-menu")) {
-					document.body.removeAttribute("data-menu");
-					if (croixRef.current) croixRef.current.style.display = "none";
-					if (bergurRef.current) bergurRef.current.style.display = "inherit";
-				}
-			}
-		};
-
-		if (window.matchMedia("(max-width: 767px)").matches) {
-			document.body.addEventListener("click", handleBodyClick);
-		}
-
-		return () => {
-			document.body.removeEventListener("click", handleBodyClick);
-		};
-	}, []);
-
 	return (
-		<button className="navBtn" onClick={toggleNavigation}>
-			<div ref={bergurRef} style={{ display: "inherit" }}>
+		<button className="navBtn" onClick={toggleNavigation} ref={ref}>
+			<div ref={burgerRef} style={{ opacity: 1 }}>
 				<svg
 					className="navBtn__svg"
 					xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +35,7 @@ const BurgerMenu: React.FC = () => {
 					<path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"></path>
 				</svg>
 			</div>
-			<div ref={croixRef} style={{ display: "none" }}>
+			<div ref={crossRef} style={{ opacity: 0 }}>
 				<svg
 					className="navBtn__svg"
 					xmlns="http://www.w3.org/2000/svg"
@@ -68,6 +49,6 @@ const BurgerMenu: React.FC = () => {
 			</div>
 		</button>
 	);
-};
+});
 
 export default BurgerMenu;
