@@ -27,10 +27,16 @@
 	--font-secondary: "azo-sans-web", sans-serif;
 	--font-title: "Montserrat", sans-serif;
 
-	--font-size-h1: 40px;
+	--font-size-h1: 32px;
 }
 
 * {
 	margin: 0;
 	padding: 0;
+}
+
+@media screen and (min-width: 1400px) {
+	:root {
+		--font-size-h1: 40px;
+	}
 }

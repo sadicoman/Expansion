@@ -18,7 +18,7 @@
 
 .main {
 	padding: 16px;
-	max-width: 1280px;
+	max-width: 412px;
 	margin: auto;
 }
 
@@ -26,6 +26,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 24px;
+	margin: 0 20px 20px 20px;
 }
 
 .lien,
@@ -33,8 +34,18 @@
 	cursor: pointer;
 }
 
+@media screen and (min-width: 768px) {
+	.main {
+		max-width: 768px;
+	}
+}
+
 @media screen and (min-width: 1400px) {
 	.main {
 		padding: 100px 32px 0px 32px;
+		max-width: 1280px;
+	}
+	.section {
+		margin: 0;
 	}
 }

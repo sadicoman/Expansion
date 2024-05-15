@@ -1,23 +1,35 @@
 // Header.scss
+.container__header {
+	max-width: 412px;
+	margin: auto;
+}
+
 .header {
 	padding: 16px;
 	display: flex;
 	justify-content: space-between;
 	align-items: stretch;
+	margin: 20px 20px 0 20px;
 }
 
 .logo {
 	width: 185px;
 }
 
+@media screen and (min-width: 768px) {
+	.container__header {
+		max-width: 768px;
+	}
+}
+
 @media screen and (min-width: 1400px) {
 	.container__header {
 		padding: 0px 32px;
 		max-width: 1280px;
-		margin: auto;
 	}
 	.header {
 		justify-content: normal;
 		gap: 40px;
+		margin: 0;
 	}
 }

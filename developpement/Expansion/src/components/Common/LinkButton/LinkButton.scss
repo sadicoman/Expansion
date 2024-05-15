@@ -79,11 +79,11 @@
 
 	@keyframes space-animation {
 		0% {
-			transform: rotate(-30deg) translateY(calc(-52% * var(--i)));
+			transform: rotate(70deg) translateY(calc(-52% * var(--i)));
 		}
 
 		100% {
-			transform: rotate(-30deg) translateY(calc(52% * var(--i)));
+			transform: rotate(70deg) translateY(calc(52% * var(--i)));
 		}
 	}
 
