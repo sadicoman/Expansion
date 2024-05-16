@@ -18,7 +18,7 @@ const Content: React.FC = () => {
 
 			const tl = gsap.timeline();
 			tl.from(chars, {
-				duration: 0.2,
+				duration: 0.18,
 				opacity: 0,
 				y: -50,
 				ease: "back.out(1.7)",
@@ -29,15 +29,15 @@ const Content: React.FC = () => {
 			gsap.from(".text", {
 				opacity: 0,
 				y: -20,
-				duration: 0.3,
+				duration: 0.25,
 				delay: 3.5,
 			});
 
 			gsap.from(".box", {
 				opacity: 0,
 				y: -20,
-				duration: 0.4,
-				delay: 4,
+				duration: 0.3,
+				delay: 3.8,
 			});
 
 			return () => {
