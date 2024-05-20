@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import LinkButton from "../Common/LinkButton/LinkButton";
 import "./Content.scss";
+import ThreeScene from "../ThreeScene/ThreeScene";
 
 const Content: React.FC = () => {
 	const container = useRef(null);
@@ -50,22 +51,25 @@ const Content: React.FC = () => {
 	return (
 		<>
 			<section ref={container} className="section">
-				<h1 ref={titleRef} className="title">
-					Nous vous accompagnons dans votre{" "}
-					<span className="color--primary">expansion digitale</span>
-				</h1>
-				<p className="text text--color">
-					Le programme Digital Booster d’Expansion est{" "}
-					<span className="highlight">
-						l’atout digital des petites, moyennes et grandes entreprises
-					</span>{" "}
-					qui souhaitent développer ou confirmer leur présence en ligne.
-				</p>
-				<LinkButton
-					text="Faites le test sans plus tarder"
-					iconUrl="../src/assets/images/rocket-icon.svg"
-					href="#"
-				/>
+				<div className="container">
+					<h1 ref={titleRef} className="title">
+						Nous vous accompagnons dans votre{" "}
+						<span className="color--primary">expansion digitale</span>
+					</h1>
+					<p className="text text--color">
+						Le programme Digital Booster d’Expansion est{" "}
+						<span className="highlight">
+							l’atout digital des petites, moyennes et grandes entreprises
+						</span>{" "}
+						qui souhaitent développer ou confirmer leur présence en ligne.
+					</p>
+					<LinkButton
+						text="Faites le test sans plus tarder"
+						iconUrl="../src/assets/images/rocket-icon.svg"
+						href="#"
+					/>
+				</div>
+				<ThreeScene />
 			</section>
 		</>
 	);
