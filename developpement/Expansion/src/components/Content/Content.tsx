@@ -5,10 +5,13 @@ import { SplitText } from "gsap/SplitText";
 import LinkButton from "../Common/LinkButton/LinkButton";
 import "./Content.scss";
 import ThreeScene from "../ThreeScene/ThreeScene";
+import SvgComponent from "../ThreeScene/SvgComponent";
 
 const Content: React.FC = () => {
 	const container = useRef(null);
 	const titleRef = useRef(null);
+	const svgRef = useRef(null); // Référence pour SvgComponent
+	const threeSceneRef = useRef(null); // Référence pour ThreeScene
 
 	useGSAP(
 		() => {
@@ -41,6 +44,41 @@ const Content: React.FC = () => {
 				delay: 3.8,
 			});
 
+			gsap.fromTo(
+				svgRef.current,
+				{
+					scale: 0,
+					opacity: 0,
+				},
+				{
+					scale: 1,
+					opacity: 1,
+					transformOrigin: "center center",
+					duration: 2,
+					ease: "power2.inOut",
+
+					onComplete: () => {
+						gsap.fromTo(
+							threeSceneRef.current,
+							{
+								// scale: 0,
+								y: 50,
+								opacity: 0,
+							},
+							{
+								// scale: 1,
+								opacity: 1,
+								y: 0,
+								// transformOrigin: "center center",
+								duration: 1.25,
+								delay: 0.5,
+								ease: "power2.inOut",
+							},
+						);
+					},
+				},
+			);
+
 			return () => {
 				splitTitle.revert();
 			};
@@ -69,7 +107,14 @@ const Content: React.FC = () => {
 						href="#"
 					/>
 				</div>
-				<ThreeScene />
+				<div className="container__three">
+					<div className="container__illu" ref={svgRef}>
+						<SvgComponent />
+					</div>
+					<div ref={threeSceneRef} style={{ opacity: 0 }}>
+						<ThreeScene />
+					</div>
+				</div>
 			</section>
 		</>
 	);
