@@ -1,5 +1,7 @@
 .container__three {
 	position: relative;
+	overflow: hidden;
+	height: 50rem;
 
 	.containner__illu {
 		position: absolute;
@@ -40,10 +42,12 @@
 	.three {
 		canvas {
 			top: -13rem;
-			right: -5rem;
+			right: -9rem;
 		}
 	}
 	.container__three {
+		overflow: inherit;
+		height: inherit;
 		.illu {
 			top: -19rem;
 			right: -26rem;
