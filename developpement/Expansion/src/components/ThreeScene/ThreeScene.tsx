@@ -17,7 +17,7 @@ const ThreeScene: React.FC = () => {
 		// Définir la taille initiale du renderer pour correspondre au conteneur
 		const setRendererSize = () => {
 			if (currentMountRef) {
-				const { clientWidth, clientHeight } = currentMountRef;
+				const { clientWidth } = currentMountRef;
 				renderer.setSize(clientWidth, 800, false); // Fixer la hauteur à 800px
 			}
 		};

@@ -4,10 +4,10 @@ import BurgerMenu from "./BurgerMenu/BurgerMenu";
 import "./Header.scss";
 import Navbar from "./Navbar/Navbar";
 
-const Header = () => {
+const Header: React.FC = () => {
 	const headerRef = useRef<HTMLDivElement>(null);
 	const logoRef = useRef<HTMLImageElement>(null);
-	const burgerMenuRef = useRef<HTMLDivElement>(null);
+	const burgerMenuRef = useRef<HTMLButtonElement>(null);
 	const navRef = useRef<HTMLElement>(null);
 
 	useEffect(() => {

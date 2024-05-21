@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
@@ -103,7 +103,7 @@ const Content: React.FC = () => {
 					</p>
 					<LinkButton
 						text="Faites le test sans plus tarder"
-						iconUrl="../src/assets/images/rocket-icon.svg"
+						iconUrl="assets/images/rocket-icon.svg"
 						href="#"
 					/>
 				</div>

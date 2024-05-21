@@ -6,21 +6,6 @@ const SvgComponent: React.FC<SVGProps<SVGSVGElement>> = props => {
 	useEffect(() => {
 		const timeline = gsap.timeline();
 
-		// timeline.fromTo(
-		// 	"#illu",
-		// 	{
-		// 		scale: 0,
-		// 		opacity: 0,
-		// 		transformOrigin: "center center",
-		// 		duration: 2,
-		// 		ease: "power2.inOut",
-		// 	},
-		// 	{
-		// 		scale: 1,
-		// 		opacity: 1,
-		// 	},
-		// );
-
 		// Animation pour la fusée et la fumée
 		timeline
 			.fromTo(
@@ -71,9 +56,7 @@ const SvgComponent: React.FC<SVGProps<SVGSVGElement>> = props => {
 				x="0px"
 				y="0px"
 				viewBox="0 0 1683.8 1190.6"
-				style={{
-					enableBackground: "new 0 0 1683.8 1190.6",
-				}}
+				style={{ background: "new 0 0 1683.8 1190.6" }}
 				xmlSpace="preserve"
 				{...props}
 			>

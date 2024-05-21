@@ -40,6 +40,10 @@
 	cursor: pointer;
 }
 
+body[data-menu] .main {
+	display: none;
+}
+
 @media screen and (min-width: 768px) {
 	.main {
 		max-width: 768px;
@@ -65,5 +69,8 @@
 	.section {
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
+	}
+	.title {
+		width: 456px;
 	}
 }

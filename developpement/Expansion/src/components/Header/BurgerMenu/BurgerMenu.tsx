@@ -1,9 +1,9 @@
-import React, { useEffect, useRef, forwardRef } from "react";
+import { useRef, forwardRef } from "react";
 import gsap from "gsap";
 import { useMenu } from "../MenuContext";
 import "./BurgerMenu.scss";
 
-const BurgerMenu = forwardRef<HTMLElement>((props, ref) => {
+const BurgerMenu = forwardRef<HTMLButtonElement>((_, ref) => {
 	const burgerRef = useRef<HTMLDivElement>(null);
 	const crossRef = useRef<HTMLDivElement>(null);
 	const { toggleMenuVisibility } = useMenu();
